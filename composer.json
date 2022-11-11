@@ -1,0 +1,21 @@
+{
+    "name": "grebcca/profit-warehouse",
+    "type": "project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.5",
+        "vlucas/phpdotenv": "^5.5",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Warehouse\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Joise Garcia",
+            "email": "jgarcia@grebcca.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
