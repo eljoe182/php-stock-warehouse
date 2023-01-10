@@ -1,5 +1,9 @@
 # Consulta de Stock de Productos a Profit 2k8
 
+### Pre-requisitos
+
+- Disponer del servicio REST integrador de Consultores GREB licenciado
+
 ### Instalación
 
 1. Clonar el repositorio
