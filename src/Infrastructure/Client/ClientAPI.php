@@ -35,7 +35,8 @@ class ClientAPI implements iMethods
   public function get($url, $params = [], $headers = [])
   {
     $response = $this->client->request('GET', $this->setUrl($url), [
-      'headers' => $headers
+      'headers' => $headers,
+      'query' => $params,
     ]);
     return json_decode($response->getBody()->getContents());
   }
@@ -58,7 +59,16 @@ class ClientAPI implements iMethods
 
   public function put($url, $data, $params = [], $headers = [])
   {
-    // TODO: Implement put() method.
+    $response = $this->client->request('PUT', $this->setUrl($url), [
+      'headers' => [
+        'Content-Type' => 'application/json',
+        ...$headers
+      ],
+      'query' => $params,
+      'json' => $data,
+    ]);
+
+    return json_decode($response->getBody()->getContents());
   }
 
   public function delete($url, $params = [], $headers = [])
