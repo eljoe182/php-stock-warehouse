@@ -8,8 +8,8 @@ use Warehouse\Infrastructure\Interfaces\IMethods;
 
 class ClientAPI implements iMethods
 {
-  private GuzzleClient $client;
-  private string $segment = '/api';
+  private $client;
+  private $segment = '/api';
 
   public function __construct()
   {
@@ -47,10 +47,10 @@ class ClientAPI implements iMethods
   public function post($url, $data, $headers = [])
   {
     $response = $this->client->request('POST', $this->setUrl($url), [
-      'headers' => [
-        'Content-Type' => 'application/json',
-        ...$headers
-      ],
+      'headers' => array_merge(
+        [ 'Content-Type' => 'application/json' ],
+        $headers
+      ),
       'json' => $data,
     ]);
 
@@ -60,10 +60,10 @@ class ClientAPI implements iMethods
   public function put($url, $data, $params = [], $headers = [])
   {
     $response = $this->client->request('PUT', $this->setUrl($url), [
-      'headers' => [
-        'Content-Type' => 'application/json',
-        ...$headers
-      ],
+      'headers' => array_merge(
+        [ 'Content-Type' => 'application/json' ],
+        $headers
+      ),
       'query' => $params,
       'json' => $data,
     ]);
