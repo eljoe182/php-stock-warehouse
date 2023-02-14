@@ -22,6 +22,6 @@ class Authentication extends BaseUseCase implements IAuthentication
       'database' => $_ENV['DATABASE']
     ];
 
-    return $this->client->post($url, $data);
+    return $this->client->post($url, $data, []);
   }
 }

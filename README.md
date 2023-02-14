@@ -57,7 +57,7 @@ El token de acceso es requerido para todos los endpoints del api, por lo que se 
 
 ### Consulta de Stock
 
-Si deseas realizar una consulta de stock de todo el inventario, debes instanciar la clase `GetStockWarehouse` y pasarle como parámetro el código del producto y el almacen usando el metodo `getStockWarehouse()`.
+Si deseas realizar una consulta de stock de todo el inventario, debes instanciar la clase `GetStockWarehouse` y pasarle como parámetro el código del producto y el almacen usando el metodo `getStockWarehouse([codigo del almacen])`.
 
 ```php
 require 'app/index.php';
@@ -73,7 +73,7 @@ $result = $stock->getStockWarehouse('CCS');
 ...
 ```
 
-Si deseas realizar una consulta de stock de un producto en un almacen especifico, debes instanciar la clase `GetStockProduct` y pasarle como parámetro el código del producto y el almacen usando el metodo `getStockProduct()`.
+Si deseas realizar una consulta de stock de un producto en un almacen especifico, debes instanciar la clase `GetStockProduct` y pasarle como parámetro el código del producto y el almacen usando el metodo `getStockProduct([codigo del producto], [codigo del almacen])`.
 
 ```php
 require 'app/index.php';
@@ -91,7 +91,7 @@ $result = $stockProduct->getStockProduct('3003023', 'CCS');
 
 ### Actualización de Stock
 
-Para actualizar el stock de un producto, debes instanciar la clase `UpdateStockProduct` y pasarle como parámetro el código del producto, el almacen y la cantidad a actualizar usando el metodo `updateStockProduct()`.
+Para actualizar el stock de un producto, debes instanciar la clase `UpdateStockProduct` y pasarle como parámetro el código del producto, el almacen y la cantidad a actualizar usando el metodo `updateStockProduct([codigo del producto], [codigo del almacen], [cantidad])`.
 
 ```php
 require 'app/index.php';
