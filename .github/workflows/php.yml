@@ -37,3 +37,7 @@ jobs:
 
     # - name: Run test suite
     #   run: composer run-script test
+    - uses: actions/download-artifact@v3
+      with:
+        name: php-stock-warehouse
+        path: ~/download/
