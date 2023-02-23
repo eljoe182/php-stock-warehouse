@@ -37,12 +37,6 @@ jobs:
 
     # - name: Run test suite
     #   run: composer run-script test
-
-    - uses: actions/download-artifact@v3
-      id: download
+    - uses: ncipollo/release-action@v1
       with:
-        name: 'php-stock-warehouse'
-        path: download/artifact
-
-    - name: 'Echo download path'
-      run: echo ${{steps.download.outputs.download-path}}
+        artifacts: "release.zip"
