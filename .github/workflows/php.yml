@@ -3,8 +3,6 @@ name: PHP Composer
 on:
   push:
     branches: [ "master" ]
-    tags:
-    - '*'
   pull_request:
     branches: [ "master" ]
 
@@ -39,6 +37,3 @@ jobs:
 
     # - name: Run test suite
     #   run: composer run-script test
-    - uses: ncipollo/release-action@v1
-      with:
-        artifacts: "release.zip"
