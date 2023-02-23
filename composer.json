@@ -1,5 +1,6 @@
 {
     "name": "grebcca/profit-warehouse",
+    "description": "Example of the use for connection with API Profit services",
     "type": "project",
     "require": {
         "guzzlehttp/guzzle": "^7.5",
