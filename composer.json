@@ -1,6 +1,8 @@
 {
     "name": "grebcca/profit-warehouse",
+    "description": "Example of the use for connection with API Profit services",
     "type": "project",
+    "license": "MIT",
     "require": {
         "guzzlehttp/guzzle": "^7.5",
         "vlucas/phpdotenv": "^5.5",
