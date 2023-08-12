@@ -1,10 +1,10 @@
 <?php
 
-namespace Warehouse\Infrastructure\Client;
+namespace Shared\Infrastructure\Client;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
-use Warehouse\Infrastructure\Interfaces\IMethods;
+use Shared\Infrastructure\Interfaces\IMethods;
 
 class ClientAPI implements iMethods
 {

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Warehouse\Domain\Interfaces;
+namespace Shared\Domain;
 
 
 interface IAuthentication

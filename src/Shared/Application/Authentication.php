@@ -1,11 +1,11 @@
 <?php
 
 
-namespace Warehouse\Application;
+namespace Shared\Application;
 
 use GuzzleHttp\Exception\GuzzleException;
-use Warehouse\Domain\Interfaces\IAuthentication;
-use Warehouse\Infrastructure\Implementation\BaseUseCase;
+use Shared\Domain\IAuthentication;
+use Shared\Infrastructure\Implementation\BaseUseCase;
 
 class Authentication extends BaseUseCase implements IAuthentication
 {

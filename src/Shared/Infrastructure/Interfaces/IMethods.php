@@ -1,6 +1,6 @@
 <?php
 
-namespace Warehouse\Infrastructure\Interfaces;
+namespace Shared\Infrastructure\Interfaces;
 
 interface IMethods
 {

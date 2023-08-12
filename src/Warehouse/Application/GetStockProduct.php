@@ -4,7 +4,7 @@ namespace Warehouse\Application;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Warehouse\Domain\Interfaces\IStockProduct;
-use Warehouse\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Implementation\BaseUseCase;
 
 class GetStockProduct extends BaseUseCase implements IStockProduct
 {

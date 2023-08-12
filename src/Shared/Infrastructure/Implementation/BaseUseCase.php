@@ -1,8 +1,8 @@
 <?php
 
-namespace Warehouse\Infrastructure\Implementation;
+namespace Shared\Infrastructure\Implementation;
 
-use Warehouse\Infrastructure\Client\ClientAPI;
+use Shared\Infrastructure\Client\ClientAPI;
 
 class BaseUseCase {
   protected $client;
