@@ -15,6 +15,7 @@
       <li><a href="examples/products/index.php">Go to Products</a></li>
       <li><a href="examples/transports/index.php">Go to Transports</a></li>
       <li><a href="examples/warehouse/index.php">Go to Warehouse</a></li>
+      <li><a href="examples/orders/index.php">Go to Orders</a></li>
     </ul>
   </section>
 </body>

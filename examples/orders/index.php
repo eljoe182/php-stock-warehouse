@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Transport Examples</title>
+  <title>Order Examples</title>
 </head>
 <body>
-  <h1>Transport Examples</h1>
+  <h1>Order Examples</h1>
   <section>
     <ul>
-      <li><a href="get-all/index.php">Get All Transports</a></li>
+      <li><a href="store/index.php">Store Order</a></li>
     </ul>
   </section>
   <div>

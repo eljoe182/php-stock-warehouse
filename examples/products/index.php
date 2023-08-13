@@ -11,6 +11,7 @@
     <ul>
       <li><a href="get-all/index.php">Get All Products</a></li>
       <li><a href="get-by-id/index.php">Get Product By Id</a></li>
+    </ul>
   </section>
   <div>
     Back to <a href="../../index.php">Examples</a></a>

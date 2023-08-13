@@ -18,6 +18,8 @@ class ClientAPI implements IMethods
       'defaults' => [
         'headers' => [
           'Content-Type' => 'application/json',
+          'Accept' => 'application/json',
+          'Content-Length' => -1
         ],
       ]
     ]);
