@@ -1,5 +1,4 @@
 {
-    "version": "0.8.0",
     "name": "grebcca/profit-warehouse",
     "description": "Example of the use for connection with API Profit services",
     "type": "project",
@@ -21,14 +20,15 @@
             "Warehouse\\": "src/Warehouse/"
         }
     },
+    "scripts": {
+        "dev": "php -S localhost:8080",
+        "autoload": "php composer.phar dumpautoload"
+    },
     "authors": [
         {
             "name": "Joise Garcia",
             "email": "jgarcia@grebcca.com"
         }
     ],
-    "minimum-stability": "stable",
-    "require-dev": {
-        "phpunit/phpunit": "^10.3"
-    }
+    "minimum-stability": "stable"
 }

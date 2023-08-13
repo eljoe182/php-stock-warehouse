@@ -17,7 +17,9 @@ class StoreOrder implements IBaseUseCase
 
   public function execute($data)
   {
-    $result = $this->repository->store($data);
+    $order = new Order($data);
+
+    $result = $this->repository->store($order->formatTo2k8());
 
     return $result;
   }
