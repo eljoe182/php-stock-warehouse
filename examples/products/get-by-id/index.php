@@ -3,15 +3,15 @@
 require_once __DIR__ . '/../../../app/index.php';
 
 use Shared\Application\Authentication;
-use Client\Application\FindClientById;
+use Products\Application\FindProductById;
 
 try {
   $auth = new Authentication();
   $token = $auth->getToken()->value;
 
-  // Show client by id
-  $useCase = new FindClientById($token);
-  $result = $useCase->execute('411613770');
+  // Find product by id
+  $useCase = new FindProductById($token);
+  $result = $useCase->execute("1796");
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

@@ -3,5 +3,5 @@
 namespace ClientType\Infrastructure\Interfaces;
 
 interface IClientTypesRepository {
-  public function getClientTypes();
+  public function getAll();
 }

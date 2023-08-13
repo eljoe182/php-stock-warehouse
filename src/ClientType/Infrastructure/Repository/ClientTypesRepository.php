@@ -16,7 +16,7 @@ class ClientTypesRepository extends APIRepository implements IClientTypesReposit
   /**
    * @throws GuzzleException
    */
-  public function getClientTypes() {
+  public function getAll() {
     $url = "/sales/tables/clientType";
     $headers = [
       'Authorization' => $this->token

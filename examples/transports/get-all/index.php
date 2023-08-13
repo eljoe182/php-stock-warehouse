@@ -10,8 +10,8 @@ try {
   $token = $auth->getToken()->value;
 
   // Show all transports
-  $transports = new GetAllTransports($token);
-  $result = $transports->execute();
+  $useCase = new GetAllTransports($token);
+  $result = $useCase->execute();
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

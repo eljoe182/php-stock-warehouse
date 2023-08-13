@@ -10,8 +10,8 @@ try {
   $token = $auth->getToken()->value;
 
   // Show client by rif
-  $findClient = new FindClientByRif($token);
-  $result = $findClient->execute('J-41161377-0');
+  $useCase = new FindClientByRif($token);
+  $result = $useCase->execute('J-41161377-0');
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

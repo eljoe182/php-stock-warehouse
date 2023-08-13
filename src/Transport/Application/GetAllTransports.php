@@ -17,7 +17,7 @@ class GetAllTransports implements IBaseUseCase
 
   public function execute($params = null)
   {
-    $result = $this->repository->getTransports();
+    $result = $this->repository->getAll();
 
     $transports = new Transport($result);
 

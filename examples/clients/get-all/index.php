@@ -10,8 +10,8 @@ try {
   $token = $auth->getToken()->value;
 
   // Show all clients
-  $clients = new GetAllClients($token);
-  $result = $clients->execute();
+  $useCase = new GetAllClients($token);
+  $result = $useCase->execute();
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

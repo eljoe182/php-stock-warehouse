@@ -16,7 +16,7 @@ class TransportRepository extends APIRepository implements ITransportRepository 
   /**
    * @throws GuzzleException
    */
-  public function getTransports() {
+  public function getAll() {
     $url = "/tables/transport";
     $headers = [
       'Authorization' => $this->token

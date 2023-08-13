@@ -9,13 +9,14 @@ try {
   $auth = new Authentication();
   $token = $auth->getToken()->value;
 
-  // Update product an a warehouse
-  $updateStockProduct = new UpdateStockProduct($token);
   $params = new stdClass();
   $params->productId = '1796';
   $params->warehouseId = '001';
   $params->quantity = 45;
-  $result = $updateStockProduct->execute($params);
+
+  // Update product an a warehouse
+  $useCase = new UpdateStockProduct($token);
+  $result = $useCase->execute($params);
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

@@ -17,7 +17,7 @@ class GetClientTypes implements IBaseUseCase
 
   public function execute($params = null)
   {
-    $result = $this->repository->getClientTypes();
+    $result = $this->repository->getAll();
 
     $clientTypes = new ClientTypes($result);
 

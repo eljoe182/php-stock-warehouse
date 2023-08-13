@@ -9,12 +9,14 @@ try {
   $auth = new Authentication();
   $token = $auth->getToken()->value;
 
-  // Show product an a warehouse
-  $stockProduct = new GetStockProduct($token);
+  // params
   $params = new stdClass();
   $params->productId = '1796';
   $params->warehouseId = '001';
-  $result = $stockProduct->execute($params);
+
+  // Show product an a warehouse
+  $useCase = new GetStockProduct($token);
+  $result = $useCase->execute($params);
 
   echo json_encode($result, JSON_PRETTY_PRINT);
 } catch (\GuzzleHttp\Exception\GuzzleException $e) {

@@ -3,5 +3,5 @@
 namespace Transport\Infrastructure\Interfaces;
 
 interface ITransportRepository {
-  public function getTransports();
+  public function getAll();
 }

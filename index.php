@@ -10,10 +10,11 @@
   <section>
     <p>Example for implements class</p>
     <ul>
-      <li><a href="examples/warehouse/index.php">Go to Warehouse</a></li>
       <li><a href="examples/clients/index.php">Go to Clients</a></li>
       <li><a href="examples/client-types/index.php">Go to Client Types</a></li>
+      <li><a href="examples/products/index.php">Go to Products</a></li>
       <li><a href="examples/transports/index.php">Go to Transports</a></li>
+      <li><a href="examples/warehouse/index.php">Go to Warehouse</a></li>
     </ul>
   </section>
 </body>
