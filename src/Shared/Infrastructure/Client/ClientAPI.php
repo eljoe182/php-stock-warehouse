@@ -6,7 +6,7 @@ use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\GuzzleException;
 use Shared\Infrastructure\Interfaces\IMethods;
 
-class ClientAPI implements iMethods
+class ClientAPI implements IMethods
 {
   private $client;
   private $segment = '/api';
@@ -18,7 +18,6 @@ class ClientAPI implements iMethods
       'defaults' => [
         'headers' => [
           'Content-Type' => 'application/json',
-          'Content-Length' => -1,
         ],
       ]
     ]);

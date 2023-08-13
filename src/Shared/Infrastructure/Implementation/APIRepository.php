@@ -4,7 +4,7 @@ namespace Shared\Infrastructure\Implementation;
 
 use Shared\Infrastructure\Client\ClientAPI;
 
-class BaseUseCase {
+class APIRepository {
   protected $client;
   public $token;
 

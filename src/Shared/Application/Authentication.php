@@ -5,14 +5,14 @@ namespace Shared\Application;
 
 use GuzzleHttp\Exception\GuzzleException;
 use Shared\Domain\IAuthentication;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Implementation\APIRepository;
 
-class Authentication extends BaseUseCase implements IAuthentication
+class Authentication extends APIRepository implements IAuthentication
 {
   /**
    * @throws GuzzleException
    */
-  public function geToken()
+  public function getToken()
   {
     $url = '/token';
 

@@ -2,22 +2,25 @@
 
 namespace ClientType\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use ClientType\Domain\Interfaces\IClientTypes;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use ClientType\Infrastructure\Repository\ClientTypesRepository;
+use ClientType\Domain\Class\ClientTypes;
 
-class GetClientTypes extends BaseUseCase implements IClientTypes
+class GetClientTypes implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function getClientTypes()
-  {
-    $url = "/sales/tables/clientType";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new ClientTypesRepository($token);
+  }
+
+  public function execute($params = null)
+  {
+    $result = $this->repository->getClientTypes();
+
+    $clientTypes = new ClientTypes($result);
+
+    return $clientTypes->data;
   }
 }

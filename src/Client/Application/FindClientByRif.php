@@ -2,22 +2,25 @@
 
 namespace Client\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Client\Domain\Interfaces\IFindClientByRif;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use Client\Infrastructure\Repository\ClientRepository;
+use Client\Domain\Class\Client;
 
-class FindClientByRif extends BaseUseCase implements IFindClientByRif
+class FindClientByRif implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function findByRif($rif)
-  {
-    $url = "/sales/tables/client/show/byRif/$rif";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new ClientRepository($token);
+  }
+
+  public function execute($rif)
+  {
+    $result = $this->repository->getByRif($rif);
+
+    $client = new Client($result);
+
+    return $client->data;
   }
 }

@@ -2,22 +2,25 @@
 
 namespace Client\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Client\Domain\Interfaces\IFindClientById;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use Client\Infrastructure\Repository\ClientRepository;
+use Client\Domain\Class\Client;
 
-class FindClientById extends BaseUseCase implements IFindClientById
+class FindClientById implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function findById($id)
-  {
-    $url = "/sales/tables/client/show/$id";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new ClientRepository($token);
+  }
+
+  public function execute($id)
+  {
+    $result = $this->repository->getById($id);
+
+    $client = new Client($result);
+
+    return $client->data;
   }
 }

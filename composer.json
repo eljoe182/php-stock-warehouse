@@ -1,5 +1,5 @@
 {
-    "version": "0.5.0",
+    "version": "0.6.0",
     "name": "grebcca/profit-warehouse",
     "description": "Example of the use for connection with API Profit services",
     "type": "project",
@@ -15,6 +15,7 @@
             "ClientType\\": "src/ClientType/",
             "Shared\\": "src/Shared/",
             "Transport\\": "src/Transport/",
+            "Test\\": "__tests__/",
             "Warehouse\\": "src/Warehouse/"
         }
     },

@@ -2,22 +2,25 @@
 
 namespace Warehouse\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Warehouse\Domain\Interfaces\IStockProduct;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use Warehouse\Infrastructure\Repository\WarehouseRepository;
+use Warehouse\Domain\Class\Warehouse;
 
-class GetStockProduct extends BaseUseCase implements IStockProduct
+class GetStockProduct implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function getStockProduct($productId, $warehouseId)
-  {
-    $url = "/inventory/StockWarehouse/show/$warehouseId/$productId";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new WarehouseRepository($token);
+  }
+
+  public function execute($params)
+  {
+    $result = $this->repository->getStockProduct($params->productId, $params->warehouseId);
+
+    $stockProduct = new Warehouse($result);
+
+    return $stockProduct->data;
   }
 }

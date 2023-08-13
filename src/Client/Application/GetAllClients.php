@@ -2,22 +2,25 @@
 
 namespace Client\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Client\Domain\Interfaces\IGetAllClient;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use Client\Infrastructure\Repository\ClientRepository;
+use Client\Domain\Class\Client;
 
-class GetAllClients extends BaseUseCase implements IGetAllClient
+class GetAllClients implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function getAllClients()
-  {
-    $url = "/sales/tables/client";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new ClientRepository($token);
+  }
+
+  public function execute($params = null)
+  {
+    $result = $this->repository->getAll();
+
+    $clients = new Client($result);
+
+    return $clients->data;
   }
 }

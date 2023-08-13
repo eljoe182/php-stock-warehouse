@@ -2,22 +2,25 @@
 
 namespace Transport\Application;
 
-use GuzzleHttp\Exception\GuzzleException;
-use Transport\Domain\Interfaces\IGetAllTransports;
-use Shared\Infrastructure\Implementation\BaseUseCase;
+use Shared\Infrastructure\Interfaces\IBaseUseCase;
+use Transport\Infrastructure\Repository\TransportRepository;
+use Transport\Domain\Class\Transport;
 
-class GetAllTransports extends BaseUseCase implements IGetAllTransports
+class GetAllTransports implements IBaseUseCase
 {
-  /**
-   * @throws GuzzleException
-   */
-  public function getAllTransports()
-  {
-    $url = "/tables/transport";
-    $headers = [
-      'Authorization' => $this->token
-    ];
+  private $repository;
 
-    return $this->client->get($url, [], $headers);
+  public function __construct($token)
+  {
+    $this->repository = new TransportRepository($token);
+  }
+
+  public function execute($params = null)
+  {
+    $result = $this->repository->getTransports();
+
+    $transports = new Transport($result);
+
+    return $transports->data;
   }
 }
