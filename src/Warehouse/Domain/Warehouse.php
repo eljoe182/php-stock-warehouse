@@ -1,10 +1,10 @@
 <?php
 
-namespace ClientType\Domain\Class;
+namespace Warehouse\Domain;
 
-use ClientType\Domain\Interfaces\IClientTypes;
+use Warehouse\Domain\Interfaces\IWarehouse;
 
-class ClientTypes implements IClientTypes
+class Warehouse implements IWarehouse
 {
   public $data;
 

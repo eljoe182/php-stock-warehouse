@@ -1,6 +1,6 @@
 <?php
 
-namespace Order\Domain\Class;
+namespace Order\Domain;
 
 use Order\Domain\Interfaces\IOrder;
 

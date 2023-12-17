@@ -1,10 +1,10 @@
 <?php
 
-namespace Transport\Domain\Class;
+namespace ClientType\Domain;
 
-use Transport\Domain\Interfaces\ITransport;
+use ClientType\Domain\Interfaces\IClientTypes;
 
-class Transport implements ITransport
+class ClientTypes implements IClientTypes
 {
   public $data;
 

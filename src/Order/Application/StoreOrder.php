@@ -4,7 +4,7 @@ namespace Order\Application;
 
 use Shared\Infrastructure\Interfaces\IBaseUseCase;
 use Order\Infrastructure\Repository\OrderRepository;
-use Order\Domain\Class\Order;
+use Order\Domain\Order;
 
 class StoreOrder implements IBaseUseCase
 {

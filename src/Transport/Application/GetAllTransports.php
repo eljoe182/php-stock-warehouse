@@ -4,7 +4,7 @@ namespace Transport\Application;
 
 use Shared\Infrastructure\Interfaces\IBaseUseCase;
 use Transport\Infrastructure\Repository\TransportRepository;
-use Transport\Domain\Class\Transport;
+use Transport\Domain\Transport;
 
 class GetAllTransports implements IBaseUseCase
 {

@@ -4,7 +4,7 @@ namespace ClientType\Application;
 
 use Shared\Infrastructure\Interfaces\IBaseUseCase;
 use ClientType\Infrastructure\Repository\ClientTypesRepository;
-use ClientType\Domain\Class\ClientTypes;
+use ClientType\Domain\ClientTypes;
 
 class GetClientTypes implements IBaseUseCase
 {

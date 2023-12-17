@@ -1,6 +1,6 @@
 <?php
 
-namespace Products\Domain\Class;
+namespace Products\Domain;
 
 use Products\Domain\Interfaces\IProduct;
 

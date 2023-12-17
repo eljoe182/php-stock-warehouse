@@ -4,7 +4,7 @@ namespace Warehouse\Application;
 
 use Shared\Infrastructure\Interfaces\IBaseUseCase;
 use Warehouse\Infrastructure\Repository\WarehouseRepository;
-use Warehouse\Domain\Class\Warehouse;
+use Warehouse\Domain\Warehouse;
 
 class GetStockWarehouse implements IBaseUseCase
 {

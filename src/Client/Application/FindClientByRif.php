@@ -4,7 +4,7 @@ namespace Client\Application;
 
 use Shared\Infrastructure\Interfaces\IBaseUseCase;
 use Client\Infrastructure\Repository\ClientRepository;
-use Client\Domain\Class\Client;
+use Client\Domain\Client;
 
 class FindClientByRif implements IBaseUseCase
 {
